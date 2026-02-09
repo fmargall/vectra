@@ -38,7 +38,15 @@ namespace vectra::detail
 	 */
 	inline void cpuid(std::uint32_t info[4], std::uint32_t functionID, std::uint32_t subfunctionID = 0) {
 		#if defined(_MSC_VER)
-			__cpuidex(info, functionID, subfunctionID);
+			int regs[4];
+			__cpuidex(regs,
+				static_cast<int>(functionID),
+				static_cast<int>(subfunctionID));
+
+			info[0] = static_cast<std::uint32_t>(regs[0]);
+			info[1] = static_cast<std::uint32_t>(regs[1]);
+			info[2] = static_cast<std::uint32_t>(regs[2]);
+			info[3] = static_cast<std::uint32_t>(regs[3]);
 
 		#elif defined(__GNUC__) || defined(__clang__)
 			__cpuid_count(functionID, subfunctionID, info[0], info[1], info[2], info[3]);

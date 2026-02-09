@@ -12,9 +12,9 @@ namespace vectra
 		// CPUID, when called with EAX=0, returns the maximum function ID
 		// that can then be called. To continue we will need access to 1,
 		// and 7. If not, SIMD instructions will be disabled.
-		int info[4];
+		std::uint32_t info[4];
 		detail::cpuid(info, 0);
-		int maxID = info[0];
+		std::uint32_t maxID = info[0];
 
 		if (maxID >= 1) {
 			// All the following bit instructions are manufacturer specific,
