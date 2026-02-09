@@ -33,6 +33,14 @@ project(${PROJECT_NAME_FROM_DIR}
     LANGUAGES CXX
 )
 
+# Let's add the main library target
+add_library(${PROJECT_NAME} INTERFACE)
+target_include_directories(${PROJECT_NAME} INTERFACE
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+)
+
 configure_file(
     ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/version.hpp.in
     ${CMAKE_CURRENT_BINARY_DIR}/include/${PROJECT_NAME}/version.hpp
