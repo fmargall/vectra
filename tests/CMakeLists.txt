@@ -1,5 +1,3 @@
-enable_testing()
-
 include(FetchContent)
 
 # Download GoogleTest
@@ -30,5 +28,7 @@ target_link_libraries(${PROJECT_NAME}_tests
         GTest::gtest_main
 )
 
-include(GoogleTest)
-gtest_discover_tests(${PROJECT_NAME}_tests)
+add_test(
+    NAME ${PROJECT_NAME}_tests
+    COMMAND ${PROJECT_NAME}_tests
+)
