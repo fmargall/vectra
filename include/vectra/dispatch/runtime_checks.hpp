@@ -7,7 +7,7 @@
 
 namespace vectra
 {
-	inline SIMDLevel checkHighestSupportedSIMDLevel() {
+	inline SIMDLevel highestRuntimeSIMDLevel() {
 
 		// CPUID, when called with EAX=0, returns the maximum function ID
 		// that can then be called. To continue we will need access to 1,
