@@ -2,7 +2,7 @@
 
 #include <gtest/gtest.h>
 
-#include <vectra/dispatch/runtime_checks.hpp>
+#include <vectra/vectra.hpp>
 
 TEST(RuntimeChecks, HighestLevel) {
 	auto level = vectra::highestRuntimeSIMDLevel();

@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include <vectra/backend/compute_backend.hpp>
+#include <vectra/vectra.hpp>
 
 TEST(BackendNoneFloat, StaticProperties)
 {
