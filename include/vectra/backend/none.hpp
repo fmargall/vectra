@@ -47,11 +47,13 @@ struct ComputeBackend<float, SIMDLevel::None> {
 
 	// Loads value from pointer. Useless for scalar
 	// data, added here for complete compatibility.
-	FORCE_INLINE static type load(const float* ptr) noexcept { return *ptr; }
+	FORCE_INLINE static type loadu(const float* ptr) noexcept { return *ptr; }
+	FORCE_INLINE static type loada(const float* ptr) noexcept { return *ptr; }
 
 	// Unloads SIMD value to scalar buffers. Useless
 	// for scalar data, added here for compatibility
-	FORCE_INLINE static void unload(float* ptr, type x) noexcept { *ptr = x; }
+	FORCE_INLINE static void unloadu(float* ptr, type x) noexcept { *ptr = x; }
+	FORCE_INLINE static void unloada(float* ptr, type x) noexcept { *ptr = x; }
 
 };
 
@@ -91,11 +93,13 @@ struct ComputeBackend<double, SIMDLevel::None> {
 
 	// Loads value from pointer. Useless for scalar
 	// data, added here for complete compatibility.
-	FORCE_INLINE static type load(const double* ptr) noexcept { return *ptr; }
+	FORCE_INLINE static type loadu(const double* ptr) noexcept { return *ptr; }
+	FORCE_INLINE static type loada(const double* ptr) noexcept { return *ptr; }
 
 	// Unloads SIMD value to scalar buffers. Useless
 	// for scalar data, added here for compatibility
-	FORCE_INLINE static void unload(double* ptr, type x) noexcept { *ptr = x; }
+	FORCE_INLINE static void unloadu(double* ptr, type x) noexcept { *ptr = x; }
+	FORCE_INLINE static void unloada(double* ptr, type x) noexcept { *ptr = x; }
 };
 
 }

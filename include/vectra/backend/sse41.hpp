@@ -60,11 +60,12 @@ struct ComputeBackend<float, SIMDLevel::SSE41> {
 	FORCE_INLINE static constexpr size_t alignment() noexcept { return alignof(type); }
 
 	// Loads value from pointer to associated data type
-	// Input data do not need to be aligned in memory.
-	FORCE_INLINE static type load(const float* FORCE_RESTRICT ptr) noexcept { return _mm_loadu_ps(ptr); }
+	FORCE_INLINE static type loadu(const float* FORCE_RESTRICT ptr) noexcept { return _mm_loadu_ps(ptr); } // Unaligned
+	FORCE_INLINE static type loada(const float* FORCE_RESTRICT ptr) noexcept { return _mm_load_ps (ptr); } // Aligned
 
 	// Unloads SIMD value to scalar buffers
-	FORCE_INLINE static void unload(float* FORCE_RESTRICT ptr, type x) { _mm_storeu_ps(ptr, x); }
+	FORCE_INLINE static void unloadu(float* FORCE_RESTRICT ptr, type x) { _mm_storeu_ps(ptr, x); } // Unaligned
+	FORCE_INLINE static void unloada(float* FORCE_RESTRICT ptr, type x) { _mm_store_ps (ptr, x); } // Aligned
 
 };
 
