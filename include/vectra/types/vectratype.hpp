@@ -77,8 +77,11 @@ struct Vectratype
     FORCE_INLINE static Vectratype cos (Vectratype x) noexcept { return Vectratype(backend::cos (x.value)); }
     FORCE_INLINE static Vectratype acos(Vectratype x) noexcept { return Vectratype(backend::acos(x.value)); }
     FORCE_INLINE static Vectratype sqrt(Vectratype x) noexcept { return Vectratype(backend::sqrt(x.value)); }
-
+    
     FORCE_INLINE static Vectratype min(Vectratype a, Vectratype b) noexcept { return Vectratype(backend::min(a.value, b.value)); }
+
+    FORCE_INLINE static constexpr Vectratype two_pi() noexcept { return Vectratype(backend::two_pi()); }
+
 	FORCE_INLINE T hsum() const noexcept { return backend::hsum(value); }
 };
 
