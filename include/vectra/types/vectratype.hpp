@@ -82,7 +82,13 @@ struct Vectratype
 
     FORCE_INLINE static constexpr Vectratype two_pi() noexcept { return Vectratype(backend::two_pi()); }
 
+    // Horizontal sum function. Useless for scalar
+    // data, added here for maximum compatibility.
 	FORCE_INLINE T hsum() const noexcept { return backend::hsum(value); }
+
+    // Returns the SIMD register width, in terms of
+    // the number of elements processed in parallel
+    FORCE_INLINE static constexpr size_t width() noexcept { return backend::width(); }
 };
 
 }
