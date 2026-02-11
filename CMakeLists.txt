@@ -28,7 +28,8 @@ if(GIT_DESCRIBE AND NOT GIT_DESCRIBE STREQUAL "")
     endif()
 endif()
 
-project(${PROJECT_NAME_FROM_DIR}
+set(PROJECT_NAME vectra)
+project(${PROJECT_NAME}
     VERSION ${PROJECT_VERSION}
     LANGUAGES CXX
 )
