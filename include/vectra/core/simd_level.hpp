@@ -2,6 +2,7 @@
 
 
 #include <cstdint>
+#include <ostream>
 
 
 namespace vectra
