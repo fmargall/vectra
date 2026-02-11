@@ -52,7 +52,7 @@ struct Vectratype
      *
      * Safety:
      *  - Enforced at compile-time: wrong number of arguments => compilation error.
-     *  - Disabled for scalar (SIMDLevel::None) to avoid constructor ambiguity.
+     *  - Disabled for scalar (ie., SIMDLevel::None) to avoid constructor ambiguity
      */
 	template<typename... Args,
 			 typename = std::enable_if_t<(sizeof...(Args) == backend::width()) && (backend::width() > 1)>>
@@ -76,6 +76,7 @@ struct Vectratype
     FORCE_INLINE static Vectratype sin (Vectratype x) noexcept { return Vectratype(backend::sin (x.value)); }
     FORCE_INLINE static Vectratype cos (Vectratype x) noexcept { return Vectratype(backend::cos (x.value)); }
     FORCE_INLINE static Vectratype acos(Vectratype x) noexcept { return Vectratype(backend::acos(x.value)); }
+    FORCE_INLINE static Vectratype sqrt(Vectratype x) noexcept { return Vectratype(backend::sqrt(x.value)); }
 
 	FORCE_INLINE T hsum() const noexcept { return backend::hsum(value); }
 };
