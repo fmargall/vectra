@@ -73,6 +73,10 @@ struct Vectratype
 	FORCE_INLINE friend Vectratype operator*(Vectratype a, Vectratype b) noexcept { return Vectratype(backend::mul(a.value, b.value)); }
 	FORCE_INLINE friend Vectratype operator/(Vectratype a, Vectratype b) noexcept { return Vectratype(backend::div(a.value, b.value)); }
 
+    FORCE_INLINE static Vectratype sin (Vectratype x) noexcept { return Vectratype(backend::sin (x.value)); }
+    FORCE_INLINE static Vectratype cos (Vectratype x) noexcept { return Vectratype(backend::cos (x.value)); }
+    FORCE_INLINE static Vectratype acos(Vectratype x) noexcept { return Vectratype(backend::acos(x.value)); }
+
 	FORCE_INLINE T hsum() const noexcept { return backend::hsum(value); }
 };
 
