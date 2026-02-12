@@ -99,4 +99,8 @@ struct Vectratype
     FORCE_INLINE static Vectratype loada(const T* ptr) noexcept { return Vectratype(backend::loadu(ptr)); }
 };
 
+// Compilation checks for alignment safety
+static_assert(alignof(Vectratype<float, SIMDLevel::None >) >= ComputeBackend<float, SIMDLevel::None >::alignment());
+static_assert(alignof(Vectratype<float, SIMDLevel::SSE41>) >= ComputeBackend<float, SIMDLevel::SSE41>::alignment());
+
 }
