@@ -89,6 +89,10 @@ struct Vectratype
     // Returns the SIMD register width, in terms of
     // the number of elements processed in parallel
     FORCE_INLINE static constexpr size_t width() noexcept { return backend::width(); }
+
+    // Returns the memory alignment for the register
+    FORCE_INLINE static constexpr size_t alignment() noexcept { return backend::alignment(); }
+
 };
 
 }
