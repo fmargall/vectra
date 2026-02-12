@@ -96,7 +96,7 @@ struct Vectratype
     // Loads value from pointer. Useless for scalar
     // data, added here for complete compatibility.
     FORCE_INLINE static Vectratype loadu(const T* ptr) noexcept { return Vectratype(backend::loadu(ptr)); }
-    FORCE_INLINE static Vectratype loada(const T* ptr) noexcept { return Vectratype(backend::loadu(ptr)); }
+    FORCE_INLINE static Vectratype loada(const T* ptr) noexcept { return Vectratype(backend::loada(ptr)); }
 };
 
 // Compilation checks for alignment safety
