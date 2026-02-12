@@ -10,7 +10,7 @@ namespace vectra
 {
 
 template <typename T, SIMDLevel level>
-struct Vectratype
+struct alignas(ComputeBackend<T, level>::alignment()) Vectratype
 {
 	using backend = ComputeBackend<T, level>;
 	using type    = typename backend::type;
