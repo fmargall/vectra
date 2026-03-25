@@ -13,6 +13,7 @@ TEST(VectratypeNoneFloat, Arithmetic)
     vct d = a * b;
     vct e = d - a;
     vct f = d / b;
+    vct g = vct::exp(f);
 
     EXPECT_FLOAT_EQ(c.hsum(), 5.f);
     EXPECT_FLOAT_EQ(d.hsum(), 6.f);
