@@ -85,6 +85,7 @@ struct alignas(ComputeBackend<T, level>::alignment()) Vectratype
 
     FORCE_INLINE static constexpr Vectratype one   () noexcept { return Vectratype(backend::one   ()); }
     FORCE_INLINE static constexpr Vectratype zero  () noexcept { return Vectratype(backend::zero  ()); }
+    FORCE_INLINE static constexpr Vectratype half_pi() noexcept { return Vectratype(backend::half_pi()); }
     FORCE_INLINE static constexpr Vectratype pi    () noexcept { return Vectratype(backend::pi    ()); }
     FORCE_INLINE static constexpr Vectratype two_pi() noexcept { return Vectratype(backend::two_pi()); }
 
