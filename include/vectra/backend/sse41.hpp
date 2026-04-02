@@ -33,6 +33,7 @@ struct ComputeBackend<float, SIMDLevel::SSE41> {
 
 	FORCE_INLINE static type one()				  noexcept { return _mm_set1_ps(1.f); }
 	FORCE_INLINE static type zero()				  noexcept { return _mm_setzero_ps(); }
+	FORCE_INLINE static type half_pi()			  noexcept { return _mm_set1_ps(HALF_PI_F); }
 	FORCE_INLINE static type pi()			      noexcept { return _mm_set1_ps(PI_F); }
 	FORCE_INLINE static type two_pi()			  noexcept { return _mm_set1_ps(TWO_PI_F); }
 
