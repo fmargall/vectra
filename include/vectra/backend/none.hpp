@@ -28,6 +28,7 @@ struct ComputeBackend<float, SIMDLevel::None> {
 
 	FORCE_INLINE static constexpr type one()	  noexcept { return 1.f; }
 	FORCE_INLINE static constexpr type zero()	  noexcept { return 0.f; }
+	FORCE_INLINE static constexpr type pi()	      noexcept { return PI_F; }
 	FORCE_INLINE static constexpr type two_pi()	  noexcept { return TWO_PI_F; }
 
 	// Conversion function. Useless for scalar data
@@ -74,6 +75,7 @@ struct ComputeBackend<double, SIMDLevel::None> {
 
 	FORCE_INLINE static constexpr type one()	  noexcept { return 1.; }
 	FORCE_INLINE static constexpr type zero()	  noexcept { return 0.; }
+	FORCE_INLINE static constexpr type pi()	      noexcept { return PI_D; }
 	FORCE_INLINE static constexpr type two_pi()	  noexcept { return TWO_PI_D; }
 
 	// Conversion function. Useless for scalar data,
