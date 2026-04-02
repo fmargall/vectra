@@ -1,5 +1,13 @@
 #pragma once
 
+#ifndef HALF_PI_F
+	#define HALF_PI_F 1.570796326f
+#endif
+
+#ifndef HALF_PI_D
+	#define HALF_PI_D 1.5707963267948966
+#endif
+
 #ifndef PI_F
 	#define PI_F 3.141592653f
 #endif
