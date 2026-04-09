@@ -25,6 +25,7 @@ struct ComputeBackend<float, SIMDLevel::None> {
 	FORCE_INLINE static type mul (type a, type b) noexcept { return a * b; }
 	FORCE_INLINE static type div (type a, type b) noexcept { return a / b; }
 	FORCE_INLINE static type min (type a, type b) noexcept { return a < b ? a : b; }
+	FORCE_INLINE static type abs (type x)         noexcept { return std::fabs(x); }
 
 	FORCE_INLINE static constexpr type one()	  noexcept { return 1.f; }
 	FORCE_INLINE static constexpr type zero()	  noexcept { return 0.f; }
@@ -73,6 +74,7 @@ struct ComputeBackend<double, SIMDLevel::None> {
 	FORCE_INLINE static type mul (type a, type b) noexcept { return a * b; }
 	FORCE_INLINE static type div (type a, type b) noexcept { return a / b; }
 	FORCE_INLINE static type min (type a, type b) noexcept { return a < b ? a : b; }
+	FORCE_INLINE static type abs (type x)         noexcept { return std::fabs(x); }
 
 	FORCE_INLINE static constexpr type one()	  noexcept { return 1.; }
 	FORCE_INLINE static constexpr type zero()	  noexcept { return 0.; }

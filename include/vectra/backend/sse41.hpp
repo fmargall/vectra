@@ -30,6 +30,7 @@ struct ComputeBackend<float, SIMDLevel::SSE41> {
 	FORCE_INLINE static type mul (type a, type b) noexcept { return _mm_mul_ps(a, b); }
 	FORCE_INLINE static type div (type a, type b) noexcept { return _mm_div_ps(a, b); }
 	FORCE_INLINE static type min (type a, type b) noexcept { return _mm_min_ps(a, b); }
+	FORCE_INLINE static type abs (type x)         noexcept { return _mm_and_ps(x, _mm_castsi128_ps(_mm_set1_epi32(0x7FFFFFFF))); }
 
 	FORCE_INLINE static type one()				  noexcept { return _mm_set1_ps(1.f); }
 	FORCE_INLINE static type zero()				  noexcept { return _mm_setzero_ps(); }
