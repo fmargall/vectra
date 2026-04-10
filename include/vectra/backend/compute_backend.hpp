@@ -12,3 +12,4 @@ struct ComputeBackend;
 
 #include <vectra/backend/none.hpp>
 #include <vectra/backend/sse41.hpp>
+#include <vectra/backend/avx.hpp>
