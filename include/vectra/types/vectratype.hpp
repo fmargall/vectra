@@ -83,6 +83,7 @@ struct alignas(ComputeBackend<T, level>::alignment()) Vectratype
     
 	FORCE_INLINE static Vectratype abs(Vectratype x)               noexcept { return Vectratype(backend::abs(x.value)); }
     FORCE_INLINE static Vectratype min(Vectratype a, Vectratype b) noexcept { return Vectratype(backend::min(a.value, b.value)); }
+	FORCE_INLINE static Vectratype max(Vectratype a, Vectratype b) noexcept { return Vectratype(backend::max(a.value, b.value)); }
 
     FORCE_INLINE static constexpr Vectratype one    () noexcept { return Vectratype(backend::one    ()); }
     FORCE_INLINE static constexpr Vectratype zero   () noexcept { return Vectratype(backend::zero   ()); }

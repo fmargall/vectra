@@ -30,6 +30,7 @@ struct ComputeBackend<float, SIMDLevel::AVX> {
 	FORCE_INLINE static type mul (type a, type b) noexcept { return _mm256_mul_ps(a, b); }
 	FORCE_INLINE static type div (type a, type b) noexcept { return _mm256_div_ps(a, b); }
 	FORCE_INLINE static type min (type a, type b) noexcept { return _mm256_min_ps(a, b); }
+	FORCE_INLINE static type max (type a, type b) noexcept { return _mm256_max_ps(a, b); }
 	FORCE_INLINE static type abs (type x)         noexcept { return _mm256_and_ps(x, _mm256_castsi256_ps(_mm256_set1_epi32(0x7FFFFFFF))); }
 
 	FORCE_INLINE static type one()				  noexcept { return _mm256_set1_ps(1.f); }
@@ -92,6 +93,7 @@ struct ComputeBackend<double, SIMDLevel::AVX> {
 	FORCE_INLINE static type mul (type a, type b) noexcept { return _mm256_mul_pd(a, b); }
 	FORCE_INLINE static type div (type a, type b) noexcept { return _mm256_div_pd(a, b); }
 	FORCE_INLINE static type min (type a, type b) noexcept { return _mm256_min_pd(a, b); }
+	FORCE_INLINE static type max (type a, type b) noexcept { return _mm256_max_pd(a, b); }
 	FORCE_INLINE static type abs (type x)         noexcept { return _mm256_and_pd(x, _mm256_castsi256_pd(_mm256_set1_epi32(0x7FFFFFFF))); }
 
 	FORCE_INLINE static type one()				  noexcept { return _mm256_set1_pd(1.0); }
