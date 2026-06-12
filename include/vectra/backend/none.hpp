@@ -28,6 +28,8 @@ struct ComputeBackend<float, SIMDLevel::None> {
 	FORCE_INLINE static type max (type a, type b) noexcept { return a > b ? a : b; }
 	FORCE_INLINE static type abs (type x)         noexcept { return std::fabs(x); }
 
+	FORCE_INLINE static type atan2(type y, type x) noexcept { return std::atan2(y, x); }
+
 	FORCE_INLINE static constexpr type one()	  noexcept { return 1.f; }
 	FORCE_INLINE static constexpr type zero()	  noexcept { return 0.f; }
 	FORCE_INLINE static constexpr type half_pi()  noexcept { return HALF_PI_F; }
@@ -77,6 +79,8 @@ struct ComputeBackend<double, SIMDLevel::None> {
 	FORCE_INLINE static type min (type a, type b) noexcept { return a < b ? a : b; }
 	FORCE_INLINE static type max (type a, type b) noexcept { return a > b ? a : b; }
 	FORCE_INLINE static type abs (type x)         noexcept { return std::fabs(x); }
+
+	FORCE_INLINE static type atan2(type y, type x) noexcept { return std::atan2(y, x); }
 
 	FORCE_INLINE static constexpr type one()	  noexcept { return 1.; }
 	FORCE_INLINE static constexpr type zero()	  noexcept { return 0.; }
